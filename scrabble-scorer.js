@@ -17,12 +17,14 @@ const simplePointsStructure =
 {
   1: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 
       'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  0: [' ']
 };
 
 const vowelPointsStructure = 
 {
   3: ['A', 'E', 'I', 'O', 'U'],
   1: ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
+  0: [' ']
 };
 
 const newPointStructure = transform(oldPointStructure);
@@ -166,9 +168,34 @@ function scrabbleScore(word)
 
 function initialPrompt() 
 {
+  let letterCount = 0;
+  let response = "";
+  
   console.log("Let's play some scrabble!\n")
-  return input.question("Enter a word: ");
-};
+  response = input.question("Enter a word: ");
+
+  while (letterCount != response.length)
+  {
+    for (i = 0; i < response.length; i++)
+    {
+      if (response[i].toLowerCase() in newPointStructure)
+      {
+        letterCount += 1
+      }
+    }
+
+    if (letterCount != response.length)
+    {
+      console.log("A word must only have letters or spaces.\n")
+      response = input.question("Enter a word: ");
+      letterCount = 0;
+    }
+    else
+    {
+      return response;
+    }
+  }
+}
 
 function scorerPrompt() 
 {
