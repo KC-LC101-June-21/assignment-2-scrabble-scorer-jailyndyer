@@ -10,20 +10,20 @@ const oldPointStructure =
   4: ['F', 'H', 'V', 'W', 'Y'],
   5: ['K'],
   8: ['J', 'X'],
-  10: ['Q', 'Z']
+  10: ['Q', 'Z'],
 };
 
 const simplePointsStructure = 
 {
   1: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 
-      'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+      'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
   0: [' ']
 };
 
 const vowelPointsStructure = 
 {
   3: ['A', 'E', 'I', 'O', 'U'],
-  1: ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z']
+  1: ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'],
   0: [' ']
 };
 
